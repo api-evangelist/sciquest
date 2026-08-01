@@ -1,0 +1,63 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://asodocs.jaggaer.com/ ;
+  https://www.jaggaer.com/solutions/integrations ;
+  https://www.jaggaer.com/wp-content/uploads/2024/06/JAGGAER-Integration-via-JAGGAER-Public-APIs.pdf
+type: Conventions
+provider: SciQuest / JAGGAER
+api: JAGGAER Advanced Sourcing Optimizer (ASO) API
+docs: https://asodocs.jaggaer.com/
+transport:
+  style: REST
+  encoding: JSON
+  legacy: cXML transactional messaging supported for document exchange / punchout
+authentication:
+  style: oauth2 client-credentials bearer token
+  ref: authentication/sciquest-authentication.yml
+delivery_modes:
+  description: >-
+    JAGGAER REST services can be configured either as synchronous
+    request/response, or as event-driven push (outbound webhooks) so downstream
+    ERP/other systems receive changes as they happen.
+  modes:
+  - request-response
+  - event-driven-push
+idempotency:
+  supported: true
+  mechanism: >-
+    The ASO entity import/upload and Quay job-submission flows are modeled as
+    named jobs/entities with client-supplied identifiers, so re-submitting the
+    same job/entity reference is treated as an upsert against that key rather
+    than creating a duplicate. Combined with asynchronous download endpoints,
+    long-running optimization work is polled by job id, making retries safe.
+  note: >-
+    No dedicated Idempotency-Key request header is documented; idempotency is
+    achieved through client-supplied entity/job keys and job-status polling.
+async_patterns:
+  supported: true
+  description: >-
+    Optimization jobs (Quay API) and large data pulls use asynchronous
+    submit-then-download patterns; callers submit a job, track its status, and
+    retrieve results via asynchronous download endpoints.
+data_operations:
+- entity import / upload
+- asynchronous download
+- normalized attributes
+error_handling:
+  ref: null
+  note: >-
+    A public problem+json / RFC 9457 error catalog was not documented on the ASO
+    portal; errors are surfaced per entity-service operation.
+versioning:
+  ref: lifecycle/sciquest-lifecycle.yml
+cross_links:
+  authentication: authentication/sciquest-authentication.yml
+  conformance: conformance/sciquest-conformance.yml
+  lifecycle: lifecycle/sciquest-lifecycle.yml
+  webhooks: asyncapi/sciquest-webhooks.yml
+notes: >-
+  Cross-cutting semantics compiled from the ASO API documentation portal and
+  JAGGAER's public API integration guide. Where a convention is not published
+  (e.g. a formal idempotency header or pagination scheme), it is recorded as
+  not-documented rather than invented.

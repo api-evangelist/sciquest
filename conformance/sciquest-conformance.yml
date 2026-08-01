@@ -1,0 +1,51 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://asodocs.jaggaer.com/ ;
+  https://www.jaggaer.com/solutions/integrations
+type: Conformance
+provider: SciQuest / JAGGAER
+api: JAGGAER Advanced Sourcing Optimizer (ASO) API
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    ASO API documents OAuth 2.0 authorization using the client-credentials grant
+    for system-to-system bearer tokens.
+- id: rest
+  conforms: true
+  evidence: >-
+    ASO entity services (Customer Host, Event, Quay) are REST-based with JSON
+    messaging.
+- id: cxml
+  conforms: true
+  evidence: >-
+    JAGGAER Public API integrations support cXML transactional documents for
+    punchout / document exchange.
+- id: webhooks
+  conforms: true
+  evidence: >-
+    JAGGAER REST services support an event-driven (push) configuration in
+    addition to request/response.
+- id: rfc9457
+  conforms: false
+  evidence: >-
+    No application/problem+json error format is documented on the public ASO
+    portal.
+- id: openapi
+  conforms: false
+  evidence: >-
+    No OpenAPI/Swagger description is published; documentation is HTML/PDF.
+- id: fhir
+  conforms: false
+  evidence: Not a healthcare-data API.
+- id: fapi
+  conforms: false
+  evidence: No FAPI profile claimed.
+- id: scim
+  conforms: false
+  evidence: No SCIM user-provisioning surface documented.
+notes: >-
+  Standards assertions derived from the ASO API documentation portal and
+  JAGGAER integration pages; absence of a claim is recorded as conforms:false
+  rather than assumed.

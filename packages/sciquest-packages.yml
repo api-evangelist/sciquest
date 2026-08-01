@@ -1,0 +1,30 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://github.com/UCLALibrary/jaggaer-api ;
+  https://www.postman.com/rh316/jaggaer
+type: Packages
+provider: SciQuest / JAGGAER
+summary: >-
+  No first-party JAGGAER/SciQuest client SDK was found on npm, PyPI, Maven
+  Central, NuGet, RubyGems, Packagist, crates.io or pkg.go.dev. Integration is
+  done directly against the REST/JSON + cXML APIs. Community-maintained helpers
+  exist.
+packages:
+- name: jaggaer-api (UCLALibrary)
+  language: Python
+  registry: github
+  url: https://github.com/UCLALibrary/jaggaer-api
+  official: false
+  note: >-
+    Community client used by the UCLA Library to integrate JAGGAER with the
+    campus financial system.
+- name: Jaggaer (Postman collection)
+  language: http
+  registry: postman
+  url: https://www.postman.com/rh316/jaggaer
+  official: false
+  note: Third-party public Postman collection, not published by JAGGAER.
+notes: >-
+  Only real, discoverable packages are listed. None are first-party, so no
+  SDKs canonical pointer is emitted.

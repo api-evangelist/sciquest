@@ -1,8 +1,15 @@
 aid: sciquest
 name: SciQuest
-description: 'SciQuest is a company surfaced as a portfolio company of trinity-ventures and added to the
-  API Evangelist network as a stub for enrichment. Sector: enterprise-software. This profile is a lead
-  awaiting the enrichment pipeline.'
+description: >-
+  SciQuest was a spend-management and e-procurement software company founded in
+  1995 that grew into a source-to-settle suite spanning e-procurement, sourcing,
+  contract lifecycle management, spend analytics, accounts payable and supplier
+  management. In 2017 SciQuest rebranded as JAGGAER and consolidated its products
+  into the JAGGAER One source-to-pay platform. JAGGAER exposes REST/JSON public
+  APIs (request/response and event-driven push), cXML transactional messaging, an
+  OAuth 2.0-secured Advanced Sourcing Optimizer (ASO) API, and 40+ prebuilt ERP
+  connectors (SAP, Oracle, Workday, Microsoft Dynamics, NetSuite, Ellucian). This
+  profile enriches the SciQuest lead against its live successor developer surface.
 url: https://raw.githubusercontent.com/api-evangelist/sciquest/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,15 +17,88 @@ x-backed-by:
 - trinity-ventures
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-successor: jaggaer
+accessModel:
+  pricing: unknown
+  onboarding: open
+  trial: false
+  try_now: false
+  public: true
+  label: Open access
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Enterprise Software
-apis: []
+- Procurement
+- E-Procurement
+- Spend Management
+- Source-to-Pay
+- Supplier Management
+- Sourcing
+image: https://www.jaggaer.com/app/themes/jaggaer/assets/images/logo.svg
+apis:
+- name: JAGGAER Advanced Sourcing Optimizer (ASO) API
+  description: >-
+    REST/JSON API surface for the JAGGAER (formerly SciQuest) Advanced Sourcing
+    Optimizer, secured with OAuth 2.0 client-credentials. Grouped into the Customer
+    Host Entity Service (query ASO events for a customer), the Event Entity Service
+    (interact with events, load suppliers, retrieve optimization results) and the
+    Quay API (submit, manage and track optimization jobs), plus asynchronous
+    download and entity import/upload patterns.
+  humanURL: https://asodocs.jaggaer.com/
+  baseURL: https://asodocs.jaggaer.com
+  tags:
+  - Sourcing
+  - Optimization
+  - Procurement
+  properties:
+  - type: Documentation
+    url: https://asodocs.jaggaer.com/
+  - type: Authentication
+    url: authentication/sciquest-authentication.yml
+  - type: Conventions
+    url: conventions/sciquest-conventions.yml
+  - type: Conformance
+    url: conformance/sciquest-conformance.yml
+  - type: Webhooks
+    url: asyncapi/sciquest-webhooks.yml
+common:
+- type: DomainSecurity
+  url: security/sciquest-domain-security.yml
+- type: Website
+  url: https://www.jaggaer.com/
+- type: Portal
+  url: https://www.jaggaer.com/solutions/integrations
+- type: Documentation
+  url: https://asodocs.jaggaer.com/
+- type: APIReference
+  url: https://asodocs.jaggaer.com/
+- type: Integrations
+  url: https://www.jaggaer.com/solutions/integrations
+- type: Blog
+  url: https://www.jaggaer.com/blog/
+- type: PrivacyPolicy
+  url: https://www.jaggaer.com/privacy-policy/
+- type: Compliance
+  url: security/sciquest-trust-center.yml
+- type: TrustCenter
+  url: security/sciquest-trust-center.yml
+- type: Lifecycle
+  url: lifecycle/sciquest-lifecycle.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v1

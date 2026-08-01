@@ -1,0 +1,37 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://www.jaggaer.com/solutions/integrations ;
+  https://asodocs.jaggaer.com/ ;
+  https://www.jaggaer.com/wp-content/uploads/2024/06/JAGGAER-Integration-via-JAGGAER-Public-APIs.pdf
+type: Webhooks
+provider: SciQuest / JAGGAER
+api: JAGGAER Advanced Sourcing Optimizer (ASO) API / JAGGAER Public APIs
+summary: >-
+  JAGGAER (formerly SciQuest) REST services can be configured as event-driven
+  push, delivering changes outbound to a client ERP or other downstream system
+  as they occur, rather than requiring the client to poll. This provides an
+  outbound webhook / push integration surface alongside the synchronous
+  request/response REST API.
+delivery:
+  mode: event-driven-push
+  direction: outbound (JAGGAER -> client endpoint)
+  transport: REST/JSON (cXML also supported for document-level exchange)
+  configuration: >-
+    Push vs request/response is selected per integration during setup with
+    JAGGAER; endpoints are provisioned per client tenant.
+event_catalog:
+  published: false
+  note: >-
+    JAGGAER does not publish a public enumerated event catalog or an AsyncAPI
+    document; the push capability is documented as a configuration mode covering
+    procure-to-pay, source-to-contract and supply-chain-collaboration use cases.
+  use_case_domains:
+  - procure-to-pay
+  - source-to-contract
+  - supply-chain-collaboration
+asyncapi_spec: null
+notes: >-
+  Recorded as a Webhooks capability because the event-driven push surface is
+  genuinely documented, but no AsyncAPI spec or named-event list is published,
+  so none is fabricated.

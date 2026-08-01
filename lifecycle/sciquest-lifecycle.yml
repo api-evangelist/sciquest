@@ -1,0 +1,43 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://asodocs.jaggaer.com/ ; https://www.jaggaer.com/solutions/integrations ;
+  https://statusgator.com/services/jaggaer
+type: Lifecycle
+provider: SciQuest / JAGGAER
+api: JAGGAER Advanced Sourcing Optimizer (ASO) API
+versioning:
+  scheme: entity-service
+  note: >-
+    The ASO surface is organized into distinct entity services (Customer Host
+    Entity Service, Event Entity Service, Quay API); no public global API
+    version number or dated version policy is published.
+deprecation:
+  policy_published: false
+  sunset_header: unknown
+  note: >-
+    No public deprecation/sunset (RFC 8594) policy was found on the ASO
+    documentation portal.
+status_page:
+  first_party: false
+  url: null
+  note: >-
+    JAGGAER does not publish a first-party status page at a discoverable
+    subdomain (status./trust. resolved to nothing on 2026-07-21). Third-party
+    aggregator StatusGator monitors JAGGAER availability at
+    https://statusgator.com/services/jaggaer.
+sla:
+  published: false
+history:
+  founded: '1995'
+  rebrand: >-
+    SciQuest rebranded to JAGGAER in 2017, consolidating products into the
+    JAGGAER One source-to-pay platform.
+  ownership:
+  - 2016 acquired by Accel-KKR (taken private)
+  - 2019 acquired by Cinven
+  - 2024 acquired by Vista Equity Partners
+notes: >-
+  Lifecycle facts compiled from public JAGGAER/ASO documentation and company
+  history. Absence of a published status page, SLA, or deprecation policy is
+  recorded as fact, not assumed.

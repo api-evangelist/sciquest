@@ -1,0 +1,72 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://www.jaggaer.com/privacy/security-and-quality-certifications-and-standards
+  ; https://www.jaggaer.com/trustcenter/security ;
+  https://www.jaggaer.com/press-release/soc-2-type-ii-for-aso-iso-27017-across-saas-offerings
+type: TrustCenter
+name: JAGGAER (formerly SciQuest) Trust Center
+provider: SciQuest / JAGGAER
+trust_center: https://www.jaggaer.com/trustcenter/security
+certifications_page: https://www.jaggaer.com/privacy/security-and-quality-certifications-and-standards
+security_page: https://www.jaggaer.com/solutions/security-and-compliance
+privacy_contact: privacy@jaggaer.com
+certifications:
+- id: iso-27001
+  name: ISO/IEC 27001:2022
+  domain: Information security management
+  status: certified
+- id: iso-27017
+  name: ISO/IEC 27017:2015
+  domain: Cloud services security controls
+  status: certified
+  note: across SaaS offerings (2025)
+- id: iso-27018
+  name: ISO/IEC 27018:2019
+  domain: PII protection in public clouds
+  status: certified
+- id: iso-22301
+  name: ISO 22301:2019
+  domain: Business continuity management
+  status: certified
+- id: iso-42001
+  name: ISO/IEC 42001:2023
+  domain: AI management systems
+  status: certified
+- id: iso-9001
+  name: ISO 9001:2015
+  domain: Quality management
+  status: certified
+- id: soc-1
+  name: SOC 1
+  domain: Controls over financial reporting
+  status: reported
+- id: soc-2-type-ii
+  name: SOC 2 Type II
+  domain: Security, availability, confidentiality
+  status: certified
+  note: achieved for Advanced Sourcing Optimizer (ASO), 2025
+- id: pci-dss
+  name: PCI DSS v4.0
+  domain: Payment card data security
+  status: aoc
+  note: AOC for JAGGAER eProcurement product
+- id: cyber-essentials
+  name: Cyber Essentials
+  domain: UK government cyber baseline
+  status: certified
+- id: cyber-essentials-plus
+  name: Cyber Essentials Plus
+  domain: UK government cyber baseline (audited)
+  status: certified
+compliance_programs:
+- HIPAA
+- GDPR
+- FedRAMP
+- CSA STAR Level 1
+notes: >-
+  Certifications compiled from JAGGAER's public certifications-and-standards page
+  and 2025 press release. HIPAA/GDPR/FedRAMP/CSA STAR are stated compliance
+  postures widely referenced across JAGGAER security materials. No public
+  responsible-disclosure policy or security.txt was found (probed 2026-07-21);
+  general security/privacy inquiries route to privacy@jaggaer.com.

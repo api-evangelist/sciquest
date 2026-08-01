@@ -1,0 +1,36 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://asodocs.jaggaer.com/ ;
+  https://www.jaggaer.com/wp-content/uploads/2024/06/JAGGAER-Integration-via-JAGGAER-Public-APIs.pdf
+type: Authentication
+provider: SciQuest / JAGGAER
+api: JAGGAER Advanced Sourcing Optimizer (ASO) API
+docs: https://asodocs.jaggaer.com/
+summary: >-
+  The JAGGAER (formerly SciQuest) ASO REST APIs are secured with OAuth 2.0 using
+  the client-credentials grant, letting a trusted server-side component obtain a
+  long-lived system-to-system bearer access token. Broader JAGGAER Public API
+  integrations additionally support cXML transactional messaging for
+  document-level exchange.
+security_schemes:
+- id: oauth2_client_credentials
+  type: oauth2
+  flow: clientCredentials
+  description: >-
+    OAuth 2.0 Authorization using the Client Credential grant type; issues a
+    long-term system-to-system bearer access token presented as
+    Authorization: Bearer <token>.
+  token_placement: header
+  header: Authorization
+  scheme: Bearer
+- id: cxml
+  type: message-signature
+  description: >-
+    cXML transactional messaging (credential/sender/receiver blocks) used for
+    punchout and document exchange in JAGGAER Public API integrations.
+  applies_to: JAGGAER Public API document exchange (not the ASO REST API)
+notes: >-
+  Auth profile compiled from the ASO API documentation portal and JAGGAER's
+  public API integration guide. No OpenAPI securitySchemes block is published,
+  so this is a documentation-sourced profile rather than a spec derivation.
